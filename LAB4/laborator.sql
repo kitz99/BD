@@ -34,6 +34,12 @@ where months_between(jh.start_date, jh2.start_date) > 2
       and (e.employee_id = jh.employee_id);
       
 -- ex 9
+select e.last_name, e.salary, j.job_title, l.city, c.country_name
+from employees e, employees m, jobs j, locations l, departments d, countries c
+where m.last_name = 'King' and e.manager_id = m.employee_id and j.job_id = e.job_id and m.department_id = d.department_id and d.location_id = l.location_id and c.country_id = l.country_id;
+
+
+
 
 
 --ex 10 - outer JOIN
