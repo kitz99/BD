@@ -1,0 +1,74 @@
+============ CURS 5 ============
+		21.03.2014
+================================
+
+-> intre superentitate si subentitate se scrie ISA (is a)
+
+MODELUL RELATIONAL:
+
+	-> model destinat designului si bazat pe teoria matematica a relatiilor 
+	-> 3 mari prototipuri - System R / Ingres /  PRTV
+	-> independent de platforma
+
+	Mod de definire:
+		-> Datele sunt reperezentate in tabele
+		-> este nevoie de un SGBD care suporta SQL
+		-> Un sistem de baze de date care suporta acest model
+
+	Caracteristici:
+		1) struct relat a datelor(INFORMATIE)
+		2) operatorii(PROCES)
+		3) reguli de integritate(INTEGRITATE)
+
+	**** STRUCTURA RELATIONALA A DATELOR ***
+
+		-> Datele sunt reprezentate in tabele
+		-> tabelele corespund unor relatii
+		-> conceptele( in tabel )
+
+		*Domeniul: 
+			-> in termeni uzuali este tipul de date
+			-> fiecaer atribut are un domeniu specific
+			-> nr de domenii defineste aritatea tuplului
+
+		*Relatie:
+			-> submultime a produsului cartezian al domeniilor
+			-> nu exista invariant
+			-> submultimea variaza in timp
+			-> relatia poate fi reprezentata in termeni usuali ca un tabel bidimensional (linie = tuplu)
+			-> gradul relatiei = nr de atribute; nr de linii dintr-un tabel = cardinalitate
+		
+
+		*EXEMPLU (crearea unui tabel in SQL) - curs
+
+		-> Apare necesitatea inserarii valorii null in momentul in care nu cunoastem sau nu putem folosi informatia respectiva 
+	
+	**** Tabelul Vizualizare ***
+
+		-> o BD are o schema logica, fizica si mai mue externe(vizualizare);
+		-> vizualizare = perceptie a utilizator / aplicatie asuptra BD
+		-> Constitue un filtru relativ la unul sau mai multe tabele
+		-> o visualizare este importanta si din punct de vedere al securitatii datelor si vor fi probleme importante legate de actualizari pe view;
+
+	**** REGULI DE INTEGRITATE ***
+
+		-> se refera la chei
+		-> trebuie facuta distinctie intre regulile aplicatiei si regulile structurale
+		-> exista 3 reguli ce trebuie satisfacute
+		-> toate se refera la chei
+		-> set minimal de reguli ce trebuie indeplinite de SGBD
+		-> multime minimala de atribute = cheie;
+		-> intr-o relatie trebuie sa fie cel putin o cheie
+		-> una dintre chei tre sa fie primara. Celelalte raman la statutul de a fi chei candidat
+		-> cheia primara nu poate fi actualizata. Se pune # la sfarsit
+		-> o cheie identifica liniile si este diferita de un index care localizeaza acele linii si care are un rol important in cautari
+		-> exista si chei secundare = cheie folosita ca index ptr a accesa tuplul
+		-> Fie schemele relationale R1(P1, S1) si R2(S1, S2) unde P1 kprimara pentru R1 si S1 K sec ptr R1 iar S1 k prim ptr R2. Atunci S1 este cheie externa pentru R1.
+
+		$$$ REGULI DE INTEGRITATE STRUCTURALA $$$
+
+
+
+
+
+
