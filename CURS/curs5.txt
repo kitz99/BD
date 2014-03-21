@@ -67,8 +67,39 @@ MODELUL RELATIONAL:
 
 		$$$ REGULI DE INTEGRITATE STRUCTURALA $$$
 
+			1) UNICITATEA CHEII
+			2) Integritatea entitatii
+			3) Integritatea referirii
+         
+            Reguli de 
+	De/R ---------------> D conceptuala -> Scheme relationare
+            transformare
 
+    *** Proiectarea modelului relational ***
 
+	    TRANS entitatilor
+	    	-> entitati indep = tabele indep
+	    	-> entitati dependente = tabele dependente
+	    	-> subentitati = subtabele
+	      
+	    Trans relatiilor
+	      	-> 1:1 si 1:n devin chei externe
+	      	-> INSERT HERE POZA DE PE TABLA(schema cu patrate)
+	      	-> cheia externa nu tre s apoarte acelasi nume cu cheia primara
 
+	      	-> m:m devin tabele asociative, reprezentate punctat, in care kp este compunerea cheilor primare ale celor 2 tabele + eventuale alte chestii
 
+	      	-> daca kp este alc din prea multe atribute, se prefera introducerea cheilor primare artificiale (un atribut care nu reprez neaparat o caract a tabelului [employee id]);
+
+	      	-> exemple: insert here fig1.png;
+
+	      	-> relatiile de tip 3 devin tot tabele asociative
+
+	      	-> putem avea si relatii de grad mai mare decat 2 Exemplul fig2.png
+
+	      	-> Exemplu 3 ---> figura 3;
+
+	     Tabel in curs care zice ce apare in diagrama conceptuala
+
+	     
 
