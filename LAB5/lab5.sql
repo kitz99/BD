@@ -58,7 +58,69 @@ from employees e left join departments d on (e.DEPARTMENT_ID = d.DEPARTMENT_ID)
        e.job_id = j.job_id and
        jh.job_id = j2.job_id(+); 
        
-       
+-- EX 17
+select round( avg(salary), 2) || ' Media '
+from employees
+union
+select round( avg(salary), 2) || ' Media 2000 '
+from employees
+where to_char(hire_date, 'yyyy') = '2000';
+
+
+SELECT last_name, department_name
+FROM employees e, departments d
+WHERE e.department_id = d.department_id(+)
+UNION
+SELECT last_name, department_name
+FROM employees e, departments d
+WHERE e.department_id(+) = d.department_id;
+
+
+-- ex 20 - 
+select job_title from jobs
+minus (
+select job_title
+from employees e join departments d on (d.manager_id = e.employee_id)
+                 join jobs j on (e.job_id = j.job_id)
+where d.department_name = 'Administration'
+UNION
+select job_title
+from employees e join departments d on (d.manager_id = e.employee_id)
+                 join job_history jh on(e.employee_id = jh.employee_id)
+                 join jobs j on (jh.job_id = j.job_id) 
+);
+
+-- sa se afiseze numele angajatilor si titlurile joburilor pe care acestia nu le-au avut
+
+select last_name, job_title 
+from employees, jobs
+minus (
+        select last_name, job_title
+        from employees e 
+                         join jobs j on (e.job_id = j.job_id)
+        UNION
+        
+        select last_name, job_title
+        from employees e 
+                         join job_history jh on(e.employee_id = jh.employee_id)
+                         join jobs j on (jh.job_id = j.job_id) 
+);
+
+
+-- ex 21
+select distinct e.employee_id, last_name
+from employees e, departments d, job_history jh
+where e.employee_id = d.manager_id and e.employee_id = jh.employee_id;
+
+
+select employee_id, last_name
+from employees
+where employee_id in (select manager_id from departments) and employee_id in (select employee_id from job_history);
+
+-- Angajatii care lucreaza in acelasi departament cu seful companiei
+select employee_id, last_name
+from employees 
+where department_id = (select department_id from employees where manager_id is null);
 ---------------------- LABORATORUL 5 ----------------------
 -----------------------------------------------------------
 
