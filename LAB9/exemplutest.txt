@@ -1,0 +1,55 @@
+Se da schema:
+CLIENT(id_client, nume, prenume, CNP, data_nastere, domiciliu)
+TELEFON(nr_telefon, cod_client, cod_retea, minute_nationale, minute_retea)
+RETEA(id_retea, denumire, tarif_mn, tarif_mr, tip)
+APEL(nr_tel_apelant, nr_tel_apelat, data_start, durata)
+
+tarif_mn = tarif minut national
+tarif_mr = tartif minut retea
+minute_nationale,minute_retea = minute/luna
+
+----
+
+1.(2p) Sa se obtina toti clientii companiei Vodafone care locuiesc in Bucuresti.
+
+2.(2p) Sa se adauge pentru fiecare retea informatia "acoperire" care va fi exprimata in procente 
+reprezentand acoperirea nationala. 
+Sa se atribuie retelelor de telefonie fixa o acoperire de 80 %. Permanentizati modificarile.
+Pentru retelele de telefonie mobila, acoperirea se va calcula conform datelor existente.
+
+3.(2.5p) Sa se obtina costul total al apelurilor efectuat de fiecare client, in anul curent.
+,daca taxarea se face in functie de tarifele companiei (fara minute incluse in abonament).
+ 
+4.(2.5p) Sa se obtina clientii (nume, prenume) care si-au consumat toate minutele nationale din luna mai 2010 
+pentru cel putin un abonament detinut. 
+
+5.(2.5p) Sa se afiseze numarul de minute consumate de catre fiecare client pentru fiecare telefon,
+consumate de catre fiecare client. (Se vor afisa numele clientului, numarul de telefon si minutele) 
+
+6.(2.5p) Sa se afiseze denumirea si tariful pentru minut national pentru retelele de telefonie mobila 
+care au mai mult de trei clienti diferiti.  
+
+7.(2.5p) sa se afiseze numele si prenumele clientilor, numerele de telefon la care pot fi contactati, denumirea retelei
+si numarul de apeluri efectuate. In lista vor aparea si clientii care nu au niciun numar de telefon inregistrat
+sau care nu au efectuat niciun apel.  
+
+8.(2.5p) Sa se afiseze pe aceeasi linie, numarul de abonati ai retelelor de telefonie fixa si numarul
+de abonati ai retelelor de telefonie mobila.
+
+9.(2.5p) Sa se afiseze toate numerele de telefon care au apelat cel putin toate numerele apelate de '0758469333'.
+
+10.(2p) Creati o copie a tabelului telefon. Adaugati cheile primare si cheile externe. Inserati o noua inregistrare
+folosind date citite de la tastatura.
+
+11.(2.5p) Sa se afiseze primele 2 companii de telefonie mobila in ordinea numarului de abonati.
+
+12.(2.5) Sa se afiseze top 3 al celor mai ieftine costuri pentru convorbiri nationale si denumirea companiilor
+care taxeaza conform acestor costuri. Rezultatul va contine coloanele retea si cost. 
+
+13.(2p) Sa se obtina clientele companiilor de telefonie mobila nascute in luna martie.
+
+14. (2p) Sa se creeze tabelul factura_*** in care se vor retine: cod_client, cod_retea, 
+data_emitere (valoare implicita data curenta), perioada, valoare. Implementati constrangerile de cheie primara si de cheie externa si constrangerea ca valoarea facturii sa fie mai mare decat 0.
+
+15. (2p)  Sa se adauge coloana bonus tabelului telefon. Bonusul va fi de 1 euro pentru clientii care au cel putin 30 de minute de convorbiri. (primite sau efectuate).
+
